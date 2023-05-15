@@ -26,3 +26,5 @@ A configuração das instâncias utilizadas encontra-se abaixo:
 # Configuração do Load Balancer
 
 # Configuração do RDS da AWS
+
+# Configuração do Terraform
