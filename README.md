@@ -6,7 +6,7 @@ Este repositório tem como objetivo conter uma documentação necessária para c
   <img src="https://github.com/PinheiroChequin/TrabalhoDocker/assets/117855728/a739dc36-9159-4b95-8ed6-e633545a202f">
 </p>
 
-Na implementação da arquitetura acima, foi utilizado o Terraform visando aplicabilidade e eficiência. Todos os arquivos utilizados estão disponíveis no seguinte repositório: [diretório do Terraform](https://github.com/PinheiroChequin/TrabalhoDocker/tree/main/proj-compass).
+Na implementação da arquitetura acima, foi utilizado o Terraform visando aplicabilidade e eficiência. Todos os arquivos utilizados estão disponíveis no seguinte repositório: [Terraform](https://github.com/PinheiroChequin/TrabalhoDocker/tree/main/proj-compass).
 
 A configuração das instâncias utilizadas encontra-se abaixo:
 
@@ -31,7 +31,19 @@ Com a Amazon Virtual Private Cloud (Amazon VPC), é possível iniciar recursos d
 ## **Criação de uma VPC**
 
 
-# Configuração do Load Balancer
+# Configuração do Aplication Load Balancer
+O Elastic Load Balancer utilizado distribui automaticamente o tráfego de entrada, monitorando a 'saúde' dos alvos e encaminhando o tráfego somente para esses alvos saudáveis.
+
+A estrutura utilizada é:
+Load Balacer -> Listener e suas regras -> Target Group
+
+1. Load Balancer: serve como um único ponto de contato para clientes, sendo assim ele que irá distribuir o tráfego de entrada da aplicação em vários destinos;
+2. Listener: verifica as solicitações de conexão de clientes, as regras aplicadas ao listener que determinam como o load balancer roteia as solicitações para os destinos registrados;
+3. Target Group: encaminha solicitações para os destinos registrados, como no caso desta aplicação para um instância EC2 usando protocolo e o número da porta especificado.
+
+Em resumo, nesta aplicação O Aplication Load Balancer recebe uma solicitação, avalia as regras definidas no Listener e por fim seleciona um destino do Target Group para executar a ação da regra.
+
+Na arquitetura proposta o Aplication Load Balancer irá receber o tráfego de clientes, o Listener a regra de protocolo HTTP e porta 80 e por fim o Target Group possui como alvo uma das duas instâncias com a aplicação do WordPress rodando. 
 
 # Configuração do RDS da AWS
 
