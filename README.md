@@ -22,6 +22,14 @@ A configuração das instâncias utilizadas encontra-se abaixo:
 - _**Volume: 1x8GB gp2**_
 
 # Configuração da VPC(Virtual Private Cloud)
+Com a Amazon Virtual Private Cloud (Amazon VPC), é possível iniciar recursos da AWS em uma rede virtual definida pelo usuário. Essa rede virtual é bem parecida com uma rede tradicional, com a vantagem de usar a infraestrutura da AWS.
+
+<p align="center">
+  <img src="![howVPCworks](https://github.com/PinheiroChequin/TrabalhoDocker/assets/129349503/f4e098f6-8918-4ba0-a9b7-b06f8c441832)">
+</p>
+
+##**Criação de uma VPC**##
+
 
 # Configuração do Load Balancer
 
