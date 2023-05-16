@@ -45,6 +45,8 @@ Em resumo, nesta aplicação O Aplication Load Balancer recebe uma solicitação
 
 Na arquitetura proposta o Aplication Load Balancer irá receber o tráfego de clientes, o Listener a regra de protocolo HTTP e porta 80 e por fim o Target Group possui como alvo uma das duas instâncias com a aplicação do WordPress rodando. 
 
+Toda configuração do Load Balancer foi feita atráves do Terraform e encontra-se neste repositório: [Load Balancer](https://github.com/PinheiroChequin/TrabalhoDocker/blob/main/proj-compass/vm.tf)
+
 # Configuração do RDS da AWS
 
 # Configuração do Terraform
