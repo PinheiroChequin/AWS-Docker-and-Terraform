@@ -30,6 +30,18 @@ Com a Amazon Virtual Private Cloud (Amazon VPC), é possível iniciar recursos d
 
 ## **Criação de uma VPC**
 Após definir uma rede virtual, a VPC é configurada com sub-redes, tabelas de rotas, um gateway da Internet e um gateway NAT.
+No exemplo utilizado, encontram-se:
+
+- _4 sub-redes (2 privadas e 2 públicas)_ 
+- _3 tabelas de rotas(1 para cada tipo de sub-redes e 1 padrão)_
+- _2 gateways(1 privado e 1 publico)_
+
+
+-> Uma `subnet` é uma gama de endereços IP na VPC. Uma sub-rede deve residir em uma única zona de disponibilidade. 
+
+-> Usa-se `route tables` para determinar para onde o tráfego da sub-rede ou do gateway será direcionado.
+
+-> Um `gateway` conecta a VPC a uma outra rede. Por exemplo, use um **gateway da Internet** para conectar a VPC à Internet.
 
 # Configuração do Aplication Load Balancer
 O Elastic Load Balancer utilizado distribui automaticamente o tráfego de entrada, monitorando a 'saúde' dos alvos e encaminhando o tráfego somente para esses alvos saudáveis.
