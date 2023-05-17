@@ -81,11 +81,16 @@ Na criação da instância, assim como qualquer banco de dados, foi criado o usu
 
 Toda configuração do RDS foi feita atráves do Terraform e encontra-se neste repositório: [RDS](https://github.com/PinheiroChequin/TrabalhoDocker/blob/main/proj-compass/main.tf)
 # Configuração do Terraform
-A configuração inicial do Terraform, do EFS e do RDS encontram-se no `main.tf`
 
-Toda configuração da VPC, com suas sub-redes, tabelas de rotas, gateway de internet e o NAT gateway encontram-se em `network.tf`
+Nota: É necessário possuir um par de chaves e as credenciais do usuário da AWS para prosseguir com a configuração do Terraform. 
 
-E por fim, a configuração das instâncias EC2 juntamente com a configuração do grupo de segurança, configuração do Load Balancer e do Auto Scaling encontram-se em `vm.tf` 
+A configuração inicial do Terraform, do EFS e do RDS encontram-se no [`main.tf`](https://github.com/PinheiroChequin/TrabalhoDocker/blob/main/proj-compass/main.tf)
+
+Toda configuração da VPC, com suas sub-redes, tabelas de rotas, gateway de internet e o NAT gateway encontram-se em [`network.tf`](https://github.com/PinheiroChequin/TrabalhoDocker/blob/main/proj-compass/network.tf)
+
+O [`outputs.tf`](https://github.com/PinheiroChequin/TrabalhoDocker/blob/main/proj-compass/outputs.tf) apenas mostrará o DNS do Load Balancer criado no Terraform.
+
+E por fim, a configuração das instâncias EC2 juntamente com a configuração do grupo de segurança, configuração do Load Balancer e do Auto Scaling encontram-se em [`vm.tf`](https://github.com/PinheiroChequin/TrabalhoDocker/blob/main/proj-compass/vm.tf)
 
 Os códigos usados no Terraform encontram-se todos comentados nesse repositório.
 
