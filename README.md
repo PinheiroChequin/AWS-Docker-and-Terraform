@@ -29,7 +29,7 @@ Com a Amazon Virtual Private Cloud (Amazon VPC), é possível iniciar recursos d
 </p>
 
 ## **Criação de uma VPC**
-
+Após definir uma rede virtual, a VPC é configurada com sub-redes, tabelas de rotas, um gateway da Internet e um gateway NAT.
 
 # Configuração do Aplication Load Balancer
 O Elastic Load Balancer utilizado distribui automaticamente o tráfego de entrada, monitorando a 'saúde' dos alvos e encaminhando o tráfego somente para esses alvos saudáveis.
