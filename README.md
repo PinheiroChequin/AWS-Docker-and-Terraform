@@ -29,12 +29,15 @@ Com a Amazon Virtual Private Cloud (Amazon VPC), é possível iniciar recursos d
 </p>
 
 ## **Criação de uma VPC**
-Após definir uma rede virtual, a VPC é configurada com sub-redes, tabelas de rotas, um gateway da Internet e um gateway NAT.
+Após definir uma rede virtual, a VPC foi configurada com sub-redes, tabelas de rotas, um gateway da Internet e um gateway NAT.
 No exemplo utilizado, encontram-se:
 
 - _4 sub-redes (2 privadas e 2 públicas)_ 
-- _3 tabelas de rotas(1 para cada tipo de sub-redes e 1 padrão)_
-- _2 gateways(1 privado e 1 publico)_
+
+Assim estará acessível em duas zonas de disponibilidade.
+
+- _2 tabelas de rotas(1 para gateway de internet e outra para o NAT)_
+- _2 gateways(O gateway de internet e o NAT)_
 
 
 -> Uma `subnet` é uma gama de endereços IP na VPC. Uma sub-rede deve residir em uma única zona de disponibilidade. 
@@ -42,6 +45,8 @@ No exemplo utilizado, encontram-se:
 -> Usa-se `route tables` para determinar para onde o tráfego da sub-rede ou do gateway será direcionado.
 
 -> Um `gateway` conecta a VPC a uma outra rede. Por exemplo, use um **gateway da Internet** para conectar a VPC à Internet.
+
+Toda configuração da VPC foi feita atráves do Terraform e encontra-se neste repositório: [VPC](https://github.com/PinheiroChequin/TrabalhoDocker/blob/main/proj-compass/network.tf)
 
 # Configuração do Aplication Load Balancer
 O Elastic Load Balancer utilizado distribui automaticamente o tráfego de entrada, monitorando a 'saúde' dos alvos e encaminhando o tráfego somente para esses alvos saudáveis.
@@ -61,4 +66,12 @@ Toda configuração do Load Balancer foi feita atráves do Terraform e encontra-
 
 # Configuração do RDS da AWS
 
+A Amazon Relational DataBase Service (RDS) é um serviço da Web que facilita a configuração de um banco de dados relacional. 
+
+No projeto em questão foi usado uma instância de banco de dados, o qual é um ambiente de banco de dados isolado em nuvem. 
+O mecanismo de suporte ao banco de dados que foi utilizado é o MySQL. 
+
+Na criação da instância, assim como qualquer banco de dados, foi criado o usuário principal, senha e nome do banco de dados. Além disso, na criação foi atribuído uma VPC e não foi dado um IP público a instância de banco de dados, sendo assim o acesso só é possível através das instâncias EC2 que encontram-se na mesma VPC que o banco de dados.
+
+Toda configuração do RDS foi feita atráves do Terraform e encontra-se neste repositório: [RDS](https://github.com/PinheiroChequin/TrabalhoDocker/blob/main/proj-compass/main.tf)
 # Configuração do Terraform
