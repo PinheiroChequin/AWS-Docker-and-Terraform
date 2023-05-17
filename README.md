@@ -21,6 +21,12 @@ A configuração das instâncias utilizadas encontra-se abaixo:
 - _**Família: t2.micro**_
 - _**Volume: 1x8GB gp2**_
 
+Observação: O docker, bem como o docker-compose já foram inicializados na criação das instâncias através do `userdata`.
+
+Todo o `userdata` encontra-se comentado em: [userdata](https://github.com/PinheiroChequin/TrabalhoDocker/blob/main/proj-compass/user_data.sh)
+
+O script do docker-compose encontra-se em: [docker-compose](https://github.com/PinheiroChequin/TrabalhoDocker/blob/main/docker-compose.yml)
+
 # Configuração da VPC(Virtual Private Cloud)
 Com a Amazon Virtual Private Cloud (Amazon VPC), é possível iniciar recursos da AWS em uma rede virtual definida pelo usuário. Essa rede virtual é bem parecida com uma rede tradicional, com a vantagem de usar a infraestrutura da AWS.
 
@@ -75,3 +81,11 @@ Na criação da instância, assim como qualquer banco de dados, foi criado o usu
 
 Toda configuração do RDS foi feita atráves do Terraform e encontra-se neste repositório: [RDS](https://github.com/PinheiroChequin/TrabalhoDocker/blob/main/proj-compass/main.tf)
 # Configuração do Terraform
+A configuração inicial do Terraform, do EFS e do RDS encontram-se no `main.tf`
+
+Toda configuração da VPC, com suas sub-redes, tabelas de rotas, gateway de internet e o NAT gateway encontram-se em `network.tf`
+
+E por fim, a configuração das instâncias EC2 juntamente com a configuração do grupo de segurança, configuração do Load Balancer e do Auto Scaling encontram-se em `vm.tf` 
+
+Os códigos usados no Terraform encontram-se todos comentados nesse repositório.
+
